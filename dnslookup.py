@@ -104,3 +104,5 @@ def TXT_Records():
         print("\n[!] Failed To Find TXT Records [!]")
         print("\nDNS Lookup Complete!")
         pass
+
+    A_Records()
