@@ -34,6 +34,12 @@ def A_Records():
         print("-------------------------\n")
         pass
         MX_Records()
+    except KeyError:
+        print("\n[!] Failed To Find A Records [!]")
+        print("\nChecking For MX Records")
+        print("-------------------------\n")
+        pass
+        MX_Records()
 
 def MX_Records():
     try:
@@ -53,6 +59,12 @@ def MX_Records():
         else:
             print("[!] Failed To Connect or You Have Reached The 200 Request Quota! Max 200/HR")
     except IndexError:
+        print("\n[!] Failed To Find MX Records [!]")
+        print("\nChecking For AAAA Records")
+        print("-------------------------\n")
+        pass
+        AAAA_Records()
+    except KeyError:
         print("\n[!] Failed To Find MX Records [!]")
         print("\nChecking For AAAA Records")
         print("-------------------------\n")
@@ -84,6 +96,12 @@ def AAAA_Records():
         print("-------------------------\n")
         pass
         TXT_Records()
+    except KeyError:
+        print("\n[!] Failed To Find AAAA Records [!]")
+        print("\nChecking For TXT Records")
+        print("-------------------------\n")
+        pass
+        TXT_Records()
 
 def TXT_Records():
     try:
@@ -104,5 +122,12 @@ def TXT_Records():
         print("\n[!] Failed To Find TXT Records [!]")
         print("\nDNS Lookup Complete!")
         pass
-
-    A_Records()
+    except IndexError:
+        print("\n[!] Failed To Find TXT Records [!]")
+        print("\nDNS Lookup Complete!")
+        pass
+    except KeyError:
+        print("\n[!] Failed To Find TXT Records [!]")
+        print("\nDNS Lookup Complete!")
+        pass
+A_Records()
